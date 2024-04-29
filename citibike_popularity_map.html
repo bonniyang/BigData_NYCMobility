@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+            <style>
+                #map_696347edf1ea53ab45cf91c3fe84a3dd {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+             <h3 align="center" style="font-size:16px"><b>Popular and Least Popular CitiBike Stations in New York</b></h3>
+             
+    
+     <div style="position: fixed; 
+                 bottom: 50px; left: 50px; width: 150px; height: 90px; 
+                 border:2px solid grey; z-index:9999; font-size:14px;
+                 ">&nbsp; <b>Station Popularity</b> <br>
+                 &nbsp; Blue : Most Popular <br>
+                 &nbsp; Red : Least Popular
+     </div>
+     
+    
+            <div class="folium-map" id="map_696347edf1ea53ab45cf91c3fe84a3dd"></div>
+        
+</body>
+<script>
+    
+    
+            var map_696347edf1ea53ab45cf91c3fe84a3dd = L.map(
+                "map_696347edf1ea53ab45cf91c3fe84a3dd",
+                {
+                    center: [40.74386825561523, -73.99499588012695],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_14d2e4ce91824ef0f226920996e259b3 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_14d2e4ce91824ef0f226920996e259b3.addTo(map_696347edf1ea53ab45cf91c3fe84a3dd);
+        
+    
+            var marker_1b457a28c09c494bbdcd582c59986962 = L.marker(
+                [40.756404876708984, -73.99002838134766],
+                {}
+            ).addTo(map_696347edf1ea53ab45cf91c3fe84a3dd);
+        
+    
+            var icon_ccaa36b4685a87125c8110007a99b157 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_1b457a28c09c494bbdcd582c59986962.setIcon(icon_ccaa36b4685a87125c8110007a99b157);
+        
+    
+        var popup_a3dea968be8e319a66d71368f11ee348 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5e453267e2ca4098b5c494acbb9cba26 = $(`<div id="html_5e453267e2ca4098b5c494acbb9cba26" style="width: 100.0%; height: 100.0%;">Most Popular: W 41 St & 8 Ave</div>`)[0];
+                popup_a3dea968be8e319a66d71368f11ee348.setContent(html_5e453267e2ca4098b5c494acbb9cba26);
+            
+        
+
+        marker_1b457a28c09c494bbdcd582c59986962.bindPopup(popup_a3dea968be8e319a66d71368f11ee348)
+        ;
+
+        
+    
+    
+            var marker_693c0806e685b7f0dce869f28610894d = L.marker(
+                [40.74674606323242, -74.00775909423828],
+                {}
+            ).addTo(map_696347edf1ea53ab45cf91c3fe84a3dd);
+        
+    
+            var icon_ca6df22fb85f650924bb2113889f02b8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_693c0806e685b7f0dce869f28610894d.setIcon(icon_ca6df22fb85f650924bb2113889f02b8);
+        
+    
+        var popup_18c350348aa604f2adf7c16c753678b5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2fcf85599bbd02a253e0d033cb15fa57 = $(`<div id="html_2fcf85599bbd02a253e0d033cb15fa57" style="width: 100.0%; height: 100.0%;">Most Popular: W 20 St & 11 Ave</div>`)[0];
+                popup_18c350348aa604f2adf7c16c753678b5.setContent(html_2fcf85599bbd02a253e0d033cb15fa57);
+            
+        
+
+        marker_693c0806e685b7f0dce869f28610894d.bindPopup(popup_18c350348aa604f2adf7c16c753678b5)
+        ;
+
+        
+    
+    
+            var marker_6cef76ada3bd029e04f4f8a67d666a25 = L.marker(
+                [40.73454666137695, -73.99073791503906],
+                {}
+            ).addTo(map_696347edf1ea53ab45cf91c3fe84a3dd);
+        
+    
+            var icon_be91eb9fc418858ca98a5e10732d469f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_6cef76ada3bd029e04f4f8a67d666a25.setIcon(icon_be91eb9fc418858ca98a5e10732d469f);
+        
+    
+        var popup_110936832fd03cdfdc6e3a0a331a7607 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_dd893e57ba22cf554382da4fd0850f20 = $(`<div id="html_dd893e57ba22cf554382da4fd0850f20" style="width: 100.0%; height: 100.0%;">Most Popular: Broadway & E 14 St</div>`)[0];
+                popup_110936832fd03cdfdc6e3a0a331a7607.setContent(html_dd893e57ba22cf554382da4fd0850f20);
+            
+        
+
+        marker_6cef76ada3bd029e04f4f8a67d666a25.bindPopup(popup_110936832fd03cdfdc6e3a0a331a7607)
+        ;
+
+        
+    
+    
+            var marker_4bc4cfe5bc35f6394c866e42133078f7 = L.marker(
+                [40.7608757019043, -74.00277709960938],
+                {}
+            ).addTo(map_696347edf1ea53ab45cf91c3fe84a3dd);
+        
+    
+            var icon_b124b85c3b81196d019f6f1df2788c9f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_4bc4cfe5bc35f6394c866e42133078f7.setIcon(icon_b124b85c3b81196d019f6f1df2788c9f);
+        
+    
+        var popup_362af16c0ad243e4d5475b60a7c21346 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3ebaf7f4844246005e17bc5ef44b1b41 = $(`<div id="html_3ebaf7f4844246005e17bc5ef44b1b41" style="width: 100.0%; height: 100.0%;">Most Popular: 12 Ave & W 40 St</div>`)[0];
+                popup_362af16c0ad243e4d5475b60a7c21346.setContent(html_3ebaf7f4844246005e17bc5ef44b1b41);
+            
+        
+
+        marker_4bc4cfe5bc35f6394c866e42133078f7.bindPopup(popup_362af16c0ad243e4d5475b60a7c21346)
+        ;
+
+        
+    
+    
+            var marker_745b81f5876225cc2934b33b2e99f3fb = L.marker(
+                [40.75155258178711, -73.99393463134766],
+                {}
+            ).addTo(map_696347edf1ea53ab45cf91c3fe84a3dd);
+        
+    
+            var icon_f594b2817a1fbdc093df015855acc001 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_745b81f5876225cc2934b33b2e99f3fb.setIcon(icon_f594b2817a1fbdc093df015855acc001);
+        
+    
+        var popup_3ad792433244101d5dd2b0c66c2eab07 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8d87a23529c85048146137967d2a69a5 = $(`<div id="html_8d87a23529c85048146137967d2a69a5" style="width: 100.0%; height: 100.0%;">Most Popular: 8 Ave & W 33 St</div>`)[0];
+                popup_3ad792433244101d5dd2b0c66c2eab07.setContent(html_8d87a23529c85048146137967d2a69a5);
+            
+        
+
+        marker_745b81f5876225cc2934b33b2e99f3fb.bindPopup(popup_3ad792433244101d5dd2b0c66c2eab07)
+        ;
+
+        
+    
+    
+            var marker_7ee68406b8f5b2cfd370fab89527665b = L.marker(
+                [40.71754837036133, -74.01322174072266],
+                {}
+            ).addTo(map_696347edf1ea53ab45cf91c3fe84a3dd);
+        
+    
+            var icon_699466e7c4a1e8706cb4ab1398418c9b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_7ee68406b8f5b2cfd370fab89527665b.setIcon(icon_699466e7c4a1e8706cb4ab1398418c9b);
+        
+    
+        var popup_6ed1b3bb9d6abe3bcba9058a2fe97f59 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_22f75073286f1a1d7bc1ed4548151b37 = $(`<div id="html_22f75073286f1a1d7bc1ed4548151b37" style="width: 100.0%; height: 100.0%;">Most Popular: West St & Chambers St</div>`)[0];
+                popup_6ed1b3bb9d6abe3bcba9058a2fe97f59.setContent(html_22f75073286f1a1d7bc1ed4548151b37);
+            
+        
+
+        marker_7ee68406b8f5b2cfd370fab89527665b.bindPopup(popup_6ed1b3bb9d6abe3bcba9058a2fe97f59)
+        ;
+
+        
+    
+    
+            var marker_0afc00674307e5aab9925aebc87015f6 = L.marker(
+                [40.7403450012207, -73.98954772949219],
+                {}
+            ).addTo(map_696347edf1ea53ab45cf91c3fe84a3dd);
+        
+    
+            var icon_3a801f7e5fed2b309000b0f9c8b3ecaf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_0afc00674307e5aab9925aebc87015f6.setIcon(icon_3a801f7e5fed2b309000b0f9c8b3ecaf);
+        
+    
+        var popup_6df08fe650e8df175053a7afaa152235 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0226680e3e7a04b07259447d2bb7c0d3 = $(`<div id="html_0226680e3e7a04b07259447d2bb7c0d3" style="width: 100.0%; height: 100.0%;">Most Popular: Broadway & E 22 St</div>`)[0];
+                popup_6df08fe650e8df175053a7afaa152235.setContent(html_0226680e3e7a04b07259447d2bb7c0d3);
+            
+        
+
+        marker_0afc00674307e5aab9925aebc87015f6.bindPopup(popup_6df08fe650e8df175053a7afaa152235)
+        ;
+
+        
+    
+    
+            var marker_72256f8427a9fdac968397b70204ac9b = L.marker(
+                [40.74174118041992, -73.99415588378906],
+                {}
+            ).addTo(map_696347edf1ea53ab45cf91c3fe84a3dd);
+        
+    
+            var icon_fa97d50558632c679e518d6b1ee1b08f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_72256f8427a9fdac968397b70204ac9b.setIcon(icon_fa97d50558632c679e518d6b1ee1b08f);
+        
+    
+        var popup_9c7669eec52d22d0dc1eecb7416b7524 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3cd44ba13e4237f2283c3c2ab7f0f8f5 = $(`<div id="html_3cd44ba13e4237f2283c3c2ab7f0f8f5" style="width: 100.0%; height: 100.0%;">Most Popular: W 21 St & 6 Ave</div>`)[0];
+                popup_9c7669eec52d22d0dc1eecb7416b7524.setContent(html_3cd44ba13e4237f2283c3c2ab7f0f8f5);
+            
+        
+
+        marker_72256f8427a9fdac968397b70204ac9b.bindPopup(popup_9c7669eec52d22d0dc1eecb7416b7524)
+        ;
+
+        
+    
+    
+            var marker_421030b1a2170026ad66da17cdbfb6e3 = L.marker(
+                [40.7370491027832, -73.9900894165039],
+                {}
+            ).addTo(map_696347edf1ea53ab45cf91c3fe84a3dd);
+        
+    
+            var icon_2ef0af87fd228a81d129a67d8c218906 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_421030b1a2170026ad66da17cdbfb6e3.setIcon(icon_2ef0af87fd228a81d129a67d8c218906);
+        
+    
+        var popup_4368b0ada0f91dbcf9b9b3e5e3c797c2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8dd0039c1cb8751cbe681cbdf9cdae83 = $(`<div id="html_8dd0039c1cb8751cbe681cbdf9cdae83" style="width: 100.0%; height: 100.0%;">Most Popular: E 17 St & Broadway</div>`)[0];
+                popup_4368b0ada0f91dbcf9b9b3e5e3c797c2.setContent(html_8dd0039c1cb8751cbe681cbdf9cdae83);
+            
+        
+
+        marker_421030b1a2170026ad66da17cdbfb6e3.bindPopup(popup_4368b0ada0f91dbcf9b9b3e5e3c797c2)
+        ;
+
+        
+    
+    
+            var marker_c8d31c71903472a8043d2212739591b6 = L.marker(
+                [40.75187301635742, -73.97770690917969],
+                {}
+            ).addTo(map_696347edf1ea53ab45cf91c3fe84a3dd);
+        
+    
+            var icon_1b0a842ba0e109b82d5556032ce50238 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_c8d31c71903472a8043d2212739591b6.setIcon(icon_1b0a842ba0e109b82d5556032ce50238);
+        
+    
+        var popup_7fea85d8bd3a294ebf3c3c75f057aeb1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_aff03a682eef91da602f7366b53521ae = $(`<div id="html_aff03a682eef91da602f7366b53521ae" style="width: 100.0%; height: 100.0%;">Most Popular: Pershing Square North</div>`)[0];
+                popup_7fea85d8bd3a294ebf3c3c75f057aeb1.setContent(html_aff03a682eef91da602f7366b53521ae);
+            
+        
+
+        marker_c8d31c71903472a8043d2212739591b6.bindPopup(popup_7fea85d8bd3a294ebf3c3c75f057aeb1)
+        ;
+
+        
+    
+    
+            var marker_60d39138fd59bca14bd42474e69f49af = L.marker(
+                [0.0, 0.0],
+                {}
+            ).addTo(map_696347edf1ea53ab45cf91c3fe84a3dd);
+        
+    
+            var icon_00e0e1f6946936312465d9abd2a9794a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_60d39138fd59bca14bd42474e69f49af.setIcon(icon_00e0e1f6946936312465d9abd2a9794a);
+        
+    
+        var popup_ef716bb20afb76a1edf2f5ca973c56ff = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d1a6946e568f353acb38c442a6eb5719 = $(`<div id="html_d1a6946e568f353acb38c442a6eb5719" style="width: 100.0%; height: 100.0%;">Least Popular: 333 Johnson TEST 1</div>`)[0];
+                popup_ef716bb20afb76a1edf2f5ca973c56ff.setContent(html_d1a6946e568f353acb38c442a6eb5719);
+            
+        
+
+        marker_60d39138fd59bca14bd42474e69f49af.bindPopup(popup_ef716bb20afb76a1edf2f5ca973c56ff)
+        ;
+
+        
+    
+    
+            var marker_62ad0c55665561009477a1ab96d748e9 = L.marker(
+                [40.789817810058594, -73.94296264648438],
+                {}
+            ).addTo(map_696347edf1ea53ab45cf91c3fe84a3dd);
+        
+    
+            var icon_d6a47f8c47c115ae2390c11ae9c24918 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_62ad0c55665561009477a1ab96d748e9.setIcon(icon_d6a47f8c47c115ae2390c11ae9c24918);
+        
+    
+        var popup_c1613d9655f5572f718213193824e5b8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ed59e27084ef5255cb14f6c8ee14ee66 = $(`<div id="html_ed59e27084ef5255cb14f6c8ee14ee66" style="width: 100.0%; height: 100.0%;">Least Popular: 2 Ave & E 105 St</div>`)[0];
+                popup_c1613d9655f5572f718213193824e5b8.setContent(html_ed59e27084ef5255cb14f6c8ee14ee66);
+            
+        
+
+        marker_62ad0c55665561009477a1ab96d748e9.bindPopup(popup_c1613d9655f5572f718213193824e5b8)
+        ;
+
+        
+    
+    
+            var marker_1161267fa73ffe79156cdb7fe5e4e170 = L.marker(
+                [40.73049545288086, -73.99571990966797],
+                {}
+            ).addTo(map_696347edf1ea53ab45cf91c3fe84a3dd);
+        
+    
+            var icon_096c839da2aba02b4a458bbee18dcfb8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_1161267fa73ffe79156cdb7fe5e4e170.setIcon(icon_096c839da2aba02b4a458bbee18dcfb8);
+        
+    
+        var popup_8d81e9df7ca9691a69a30313eb853769 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_eef7ce2c60f295fb899f3e56ef5f4dd3 = $(`<div id="html_eef7ce2c60f295fb899f3e56ef5f4dd3" style="width: 100.0%; height: 100.0%;">Least Popular: Washington Square E</div>`)[0];
+                popup_8d81e9df7ca9691a69a30313eb853769.setContent(html_eef7ce2c60f295fb899f3e56ef5f4dd3);
+            
+        
+
+        marker_1161267fa73ffe79156cdb7fe5e4e170.bindPopup(popup_8d81e9df7ca9691a69a30313eb853769)
+        ;
+
+        
+    
+    
+            var marker_7aa4ad99a95e32c62fec18a948ab0191 = L.marker(
+                [40.669803619384766, -73.99490356445312],
+                {}
+            ).addTo(map_696347edf1ea53ab45cf91c3fe84a3dd);
+        
+    
+            var icon_bfdbaede9dfe542448a879b54c11bfdd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_7aa4ad99a95e32c62fec18a948ab0191.setIcon(icon_bfdbaede9dfe542448a879b54c11bfdd);
+        
+    
+        var popup_7e226ab8a8e837c62c58093ce327727a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c413bef4a75e6cfb7469fea2cbd8d677 = $(`<div id="html_c413bef4a75e6cfb7469fea2cbd8d677" style="width: 100.0%; height: 100.0%;">Least Popular: Expansion Tech Station</div>`)[0];
+                popup_7e226ab8a8e837c62c58093ce327727a.setContent(html_c413bef4a75e6cfb7469fea2cbd8d677);
+            
+        
+
+        marker_7aa4ad99a95e32c62fec18a948ab0191.bindPopup(popup_7e226ab8a8e837c62c58093ce327727a)
+        ;
+
+        
+    
+    
+            var marker_127ac21fe4b824259acc94a5cbed3037 = L.marker(
+                [0.0, 0.0],
+                {}
+            ).addTo(map_696347edf1ea53ab45cf91c3fe84a3dd);
+        
+    
+            var icon_583dc1948cf767a5f246d5937043c82c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_127ac21fe4b824259acc94a5cbed3037.setIcon(icon_583dc1948cf767a5f246d5937043c82c);
+        
+    
+        var popup_cb193a7ebb7603a6c521ad4138ed89ed = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e3b2d4488002c562e34659c3e39cebab = $(`<div id="html_e3b2d4488002c562e34659c3e39cebab" style="width: 100.0%; height: 100.0%;">Least Popular: LPI Facility</div>`)[0];
+                popup_cb193a7ebb7603a6c521ad4138ed89ed.setContent(html_e3b2d4488002c562e34659c3e39cebab);
+            
+        
+
+        marker_127ac21fe4b824259acc94a5cbed3037.bindPopup(popup_cb193a7ebb7603a6c521ad4138ed89ed)
+        ;
+
+        
+    
+    
+            var marker_4670f60b3cea15ac2a4859c5493ff25b = L.marker(
+                [40.66976547241211, -73.99474334716797],
+                {}
+            ).addTo(map_696347edf1ea53ab45cf91c3fe84a3dd);
+        
+    
+            var icon_c6063b62c6b42b195e85c97bfe77fd13 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_4670f60b3cea15ac2a4859c5493ff25b.setIcon(icon_c6063b62c6b42b195e85c97bfe77fd13);
+        
+    
+        var popup_6b7aa13ad1eacd3321d410cbb7ce3b62 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6ecf0233453c994bd79ce4cb4517aab4 = $(`<div id="html_6ecf0233453c994bd79ce4cb4517aab4" style="width: 100.0%; height: 100.0%;">Least Popular: Apache</div>`)[0];
+                popup_6b7aa13ad1eacd3321d410cbb7ce3b62.setContent(html_6ecf0233453c994bd79ce4cb4517aab4);
+            
+        
+
+        marker_4670f60b3cea15ac2a4859c5493ff25b.bindPopup(popup_6b7aa13ad1eacd3321d410cbb7ce3b62)
+        ;
+
+        
+    
+    
+            var marker_6f351b744159bdeb61320c32d2c88d25 = L.marker(
+                [40.75148391723633, -73.99676513671875],
+                {}
+            ).addTo(map_696347edf1ea53ab45cf91c3fe84a3dd);
+        
+    
+            var icon_917261f46a5a290eacbd235b33de747e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_6f351b744159bdeb61320c32d2c88d25.setIcon(icon_917261f46a5a290eacbd235b33de747e);
+        
+    
+        var popup_42d9aff4906daad5feb0ce969f93b6d6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_731a3a012dec8a67fd7f22b6bdf19207 = $(`<div id="html_731a3a012dec8a67fd7f22b6bdf19207" style="width: 100.0%; height: 100.0%;">Least Popular: NYCBS Depot - FAR</div>`)[0];
+                popup_42d9aff4906daad5feb0ce969f93b6d6.setContent(html_731a3a012dec8a67fd7f22b6bdf19207);
+            
+        
+
+        marker_6f351b744159bdeb61320c32d2c88d25.bindPopup(popup_42d9aff4906daad5feb0ce969f93b6d6)
+        ;
+
+        
+    
+    
+            var marker_5d8aa2728a726dba91e97dceccc36e23 = L.marker(
+                [40.71644592285156, -73.98233032226562],
+                {}
+            ).addTo(map_696347edf1ea53ab45cf91c3fe84a3dd);
+        
+    
+            var icon_655f25cc6dd884db144b45d08e127af6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_5d8aa2728a726dba91e97dceccc36e23.setIcon(icon_655f25cc6dd884db144b45d08e127af6);
+        
+    
+        var popup_6c63df6fe79bd07f4d9432b573d99f06 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0b332c9e6e3067fda5f237df9d5ad27f = $(`<div id="html_0b332c9e6e3067fda5f237df9d5ad27f" style="width: 100.0%; height: 100.0%;">Least Popular: NYCBS DEPOT - DELANCEY</div>`)[0];
+                popup_6c63df6fe79bd07f4d9432b573d99f06.setContent(html_0b332c9e6e3067fda5f237df9d5ad27f);
+            
+        
+
+        marker_5d8aa2728a726dba91e97dceccc36e23.bindPopup(popup_6c63df6fe79bd07f4d9432b573d99f06)
+        ;
+
+        
+    
+    
+            var marker_3e4d3fc11b6b44e393ddf9082bf4d99d = L.marker(
+                [40.669803619384766, -73.99490356445312],
+                {}
+            ).addTo(map_696347edf1ea53ab45cf91c3fe84a3dd);
+        
+    
+            var icon_f4391eda9df525d4bda408ec05f8d7f5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_3e4d3fc11b6b44e393ddf9082bf4d99d.setIcon(icon_f4391eda9df525d4bda408ec05f8d7f5);
+        
+    
+        var popup_4395e474c1c4796a0bb3290cd51c51fa = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_64ea561ea74a0f95c8e7c154c31055fc = $(`<div id="html_64ea561ea74a0f95c8e7c154c31055fc" style="width: 100.0%; height: 100.0%;">Least Popular: Gowanus Tech Station</div>`)[0];
+                popup_4395e474c1c4796a0bb3290cd51c51fa.setContent(html_64ea561ea74a0f95c8e7c154c31055fc);
+            
+        
+
+        marker_3e4d3fc11b6b44e393ddf9082bf4d99d.bindPopup(popup_4395e474c1c4796a0bb3290cd51c51fa)
+        ;
+
+        
+    
+    
+            var marker_8f5339882927944aabf54c66560b6954 = L.marker(
+                [40.70861053466797, -73.92850494384766],
+                {}
+            ).addTo(map_696347edf1ea53ab45cf91c3fe84a3dd);
+        
+    
+            var icon_41d0f08472e50d6e55b8b182e4fedfd9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_8f5339882927944aabf54c66560b6954.setIcon(icon_41d0f08472e50d6e55b8b182e4fedfd9);
+        
+    
+        var popup_7efda5084bbb7322ea9dbf1096883b61 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5638ba44571b735b4d1273cd4bd24837 = $(`<div id="html_5638ba44571b735b4d1273cd4bd24837" style="width: 100.0%; height: 100.0%;">Least Popular: Kiosk in a box Deployment</div>`)[0];
+                popup_7efda5084bbb7322ea9dbf1096883b61.setContent(html_5638ba44571b735b4d1273cd4bd24837);
+            
+        
+
+        marker_8f5339882927944aabf54c66560b6954.bindPopup(popup_7efda5084bbb7322ea9dbf1096883b61)
+        ;
+
+        
+    
+</script>
+</html>
